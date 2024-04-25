@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Pembelian;
 use App\Models\Pengeluaran;
 use App\Models\Penjualan;
-use Illuminate\Http\Request;
 use PDF;
+// use Barryvdh\DomPDF\PDF;
+// use Barryvdh\Snappy\Facades\SnappyPdf;
+// use Barryvdh\DomPDF\Facade\Pdf as PDF;
+// use PDF;
+use Illuminate\Http\Request;
 
 class LaporanController extends Controller
 {
@@ -74,11 +78,12 @@ class LaporanController extends Controller
     }
 
     public function exportPDF($awal, $akhir)
-    {
+    {   
         $data = $this->getData($awal, $akhir);
+        // return view('laporan.pdf', compact('awal', 'akhir', 'data'));
         $pdf  = PDF::loadView('laporan.pdf', compact('awal', 'akhir', 'data'));
         $pdf->setPaper('a4', 'potrait');
         
-        return $pdf->stream('Laporan-pendapatan-'. date('Y-m-d-his') .'.pdf');
+        return $pdf->stream('Laporan-pendapatan.pdf');
     }
 }
