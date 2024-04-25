@@ -16,8 +16,8 @@ class SettingTableSeeder extends Seeder
     {
         DB::table('setting')->insert([
             'id_setting' => 1,
-            'nama_perusahaan' => 'Toko Ku',
-            'alamat' => 'Jl. Kibandang Samaran Ds. Slangit',
+            'nama_perusahaan' => 'NexaTrade',
+            'alamat' => 'Jl. H. Rasam No.96, Parigi Baru, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15228',
             'telepon' => '081234779987',
             'tipe_nota' => 1, // kecil
             'diskon' => 5,
